@@ -1,0 +1,97 @@
+# This is a program written by Monica Rondon that is called "Pig".
+# "Pig" simulates the game Pig.
+# In the game Pig, two players each take turns rolling a six-sided die.
+# When it is a player's turn they may roll the die as many times as they wish or until they roll a 1.
+# Each number the player rolls in a turn, except a 1, is added to their score.
+# However, if the player rolls a 1, their score for this turn is zero, and their turn ends.
+# The score from each turn is cumulative.
+# The first player to reach or exceed a score of 100 wins.
+
+def main(welcome_text):
+    #function executes program
+    #input code taken from Assignment 1, Lunar Lander, Monica Rondon
+    player_reponse = input(welcome_text)
+    if len(player_response) == 0:
+        print("Sorry, I didn't catch that. ")
+        main("Please enter Y or N, followed by the 'Enter' key. ")
+        if player_response == "Y" or "y":
+            instructions()
+        elif player_response == "N" or "n":
+            print("That is a shame. ")
+            import time
+            time.sleep(5)
+            break
+        else:
+            print("Sorry, I didn't catch that. ")
+            main("Please enter Y or N, followed by the 'Enter' key. ")
+            
+global comp_current_score
+global computer_score 
+global human_score 
+
+def instructions():
+#This function gives the user instructions on how to play the game
+    time.sleep(3)
+    print("Let's play Pig!\nPig is a simple game.\nYou and the computer players take\
+    turns rolling a die.\n Each turn you can roll the die as many times as you \
+    want.\n Any number you roll, two to six, is added to your score.\n\
+    But if you roll a one you lose your turn and you score for that turn is zero!\n\
+    The object of the game is to be the first to reach a score of 100 or greater. ")
+    time.sleep(3)
+
+def play_game():
+    global comp_current_score
+    comp_current_score = 0
+    global computer_score
+    computer_score = 0
+    global human_score
+    human_start_score = 0
+    while computer_score < 100 and human_score < 100:
+        computer_move()
+        human_move
+        #come back to finish this!!!
+        
+def computer_move(computer_score, human_score):
+# This function simulates the computer's turn by rolling the die and displaying the results
+# The function may use its parameters in order to play more intelligently (for example, it may wish to gamble more agressively if it is behind)
+    while computer_score - human_score <= 15:
+          num_rolled = roll ()
+        if num_rolled != 1:
+            global comp_current_score
+            comp_current_score = comp_current_score + num_rolled
+            global computer_score
+            computer_score = computer_score + comp_current_score
+        else:
+            comp_current_score = 0
+            computer_score = computer_score + comp_current_score
+        
+        
+    
+def human_move():
+global computer_score
+global humans_score
+
+
+def evaluate_score ():
+# This function assesses if the roll equals 1 or not
+
+
+def is_game_over(computer_score, human_score):
+# This function returns True if either player has 100 or more, and the players are not tied, otherwise it returns False. (
+# Call this  only after the human's move.)
+
+def roll():
+    import random
+    print(random.randint(1,6))
+
+def ask_yes_or_no(prompt):
+# This function asks whether the user wants to roll again and if no, provides the number of rolls made
+#Prints the prompt as a question to the user, for example, "Roll again? ".
+#If the user responds with a string whose first character is 'y' or 'Y', the function returns True.
+# If the user responds with a string whose first character is 'n' or 'N', the function returns False.
+# Any other response will cause the question to be repeated until the user provides an acceptable response.
+
+def show_results(computer_score, human_score):
+# Tells whether the human won or lost, and by how much. (Call this when the game has ended.)
+
+main("Hello, would you like to play a game?/nEnter Y or N followed by the 'Enter' key")

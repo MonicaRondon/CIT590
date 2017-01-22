@@ -1,0 +1,12 @@
+#GUI Practice 1
+from tkinter import *
+top = Tk()
+def main():
+    b = Button(top, text = "Monica's first button!", command = more)
+    b.pack()
+    mainloop()
+
+def more():
+    Label(top, text = "It works!").pack()
+
+main()
